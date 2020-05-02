@@ -25,6 +25,12 @@ class BookingRegistraionController extends Controller
     {
 
     }
+    public function booking_details()
+    {
+        $event_lists =Event::all();
+        $booking_details =BookingRegistraion::all();
+        return view('front_page.booking_details', compact('event_lists','booking_details'));
+    }
 
     public function with_category_id($booking_category_id)
     {
@@ -72,7 +78,7 @@ class BookingRegistraionController extends Controller
           'user_number' =>$request->user_number,
           'created_at' =>Carbon::now()
         ]);
-          return redirect(route('event_test_page'))->with('successstatus', 'Your booking successfully submited!!');
+          return redirect(route('booking_details'))->with('successstatus', 'Your booking successfully submited!!');
       }
     }
 

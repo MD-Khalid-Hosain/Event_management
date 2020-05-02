@@ -3,11 +3,11 @@
 @section('content')
   <section class="page-section image breadcrumbs overlay">
       <div class="container">
-          <h1>EVENT DETAIL PAGE</h1>
+          <h1>EVENT Registration PAGE</h1>
           <ul class="breadcrumb">
               <li><a href="#">Home</a></li>
               <li><a href="#">Events</a></li>
-              <li class="active">Event Detail Page</li>
+              <li class="active">Event Registration Page</li>
           </ul>
       </div>
   </section>
