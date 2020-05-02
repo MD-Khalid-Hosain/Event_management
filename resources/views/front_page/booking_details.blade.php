@@ -52,9 +52,7 @@
                     <th scope="col">Event Booking Date</th>
                     <td>{{ $event_details->created_at }}</td>
                   </tr>
-                  <tr>
-                    <th scope="col" style="color:red">Event Cost</th>
-                  </tr>
+                  
 
               </table>
             @endforeach
