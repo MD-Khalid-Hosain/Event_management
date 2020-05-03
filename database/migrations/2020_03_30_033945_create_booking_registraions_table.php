@@ -21,6 +21,7 @@ class CreateBookingRegistraionsTable extends Migration
             $table->string('event_category');
             $table->string('published_at');
             $table->string('event_location');
+            $table->string('event_cost');
             $table->integer('user_number');
             $table->timestamps();
         });

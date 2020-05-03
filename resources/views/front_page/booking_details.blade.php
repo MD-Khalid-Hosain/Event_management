@@ -3,7 +3,7 @@
 @section('content')
   <section class="page-section image breadcrumbs overlay">
       <div class="container">
-          <h1>EVENT Registration PAGE</h1>
+          <h1>EVENT Booking Details PAGE</h1>
           <ul class="breadcrumb">
               <li><a href="#">Home</a></li>
               <li><a href="#">Events</a></li>
@@ -52,9 +52,14 @@
                     <th scope="col">Event Booking Date</th>
                     <td>{{ $event_details->created_at }}</td>
                   </tr>
-                  
+                  <tr>
+                    <th scope="col">Event Cost</th>
+                    <td style="font-weight: 900;">{{  $event_details->event_cost }}</td>
+                  </tr>
+
 
               </table>
+              {{ $booking_details->links() }}
             @endforeach
           </div>
       </div>

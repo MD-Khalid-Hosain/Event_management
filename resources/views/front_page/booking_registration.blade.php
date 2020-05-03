@@ -76,9 +76,13 @@
               </div>
           </div>
           <div class="form-row">
-            <div class="form-group  col-md-12">
+            <div class="form-group  col-md-6">
               <label for="mobile">Mobile Number</label>
               <input type="text" name="user_number" class="form-control" id="mobile">
+            </div>
+            <div class="form-group  col-md-6">
+              <label for="cost">Total Cost</label>
+              <input type="text" name="event_cost" readonly class="form-control" id="cost" value="{{ $booking_category_title->booking_category_price }}K">
             </div>
           </div>
 

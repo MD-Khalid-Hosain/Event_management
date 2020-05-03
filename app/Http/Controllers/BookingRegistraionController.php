@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 use App\Booking_Category;
 use App\Location;
 use App\Event;
+use App\User;
 use Carbon\Carbon;
+use Auth;
 
 class BookingRegistraionController extends Controller
 {
@@ -27,9 +29,12 @@ class BookingRegistraionController extends Controller
     }
     public function booking_details()
     {
+      $loged_in_id =Auth::user()->email;
+
         $event_lists =Event::all();
-        $booking_details =BookingRegistraion::all();
+        $booking_details =BookingRegistraion::where('user_email', '=', $loged_in_id)->orderBy('id', 'desc')->paginate(1);
         return view('front_page.booking_details', compact('event_lists','booking_details'));
+
     }
 
     public function with_category_id($booking_category_id)
@@ -61,7 +66,15 @@ class BookingRegistraionController extends Controller
 
     {
       $request->validate([
-      'published_at'=> 'required|after:tomorrow'
+      'published_at'=> 'required|after:tomorrow',
+      'user_name'=> 'required',
+      'user_email'=> 'required',
+      'event_title'=> 'required',
+      'event_category'=> 'required',
+      'event_location'=> 'required',
+      'user_number'=> 'required',
+      'event_cost'=> 'required'
+
       ]);
 
       if(BookingRegistraion::where('published_at', Carbon::parse($request->published_at))->where('event_location', $request->event_location)->exists()){
@@ -76,6 +89,7 @@ class BookingRegistraionController extends Controller
           'published_at' =>Carbon::parse($request->published_at)->format('d/m/Y'),
           'event_location' =>$request->event_location,
           'user_number' =>$request->user_number,
+          'event_cost' =>$request->event_cost,
           'created_at' =>Carbon::now()
         ]);
           return redirect(route('booking_details'))->with('successstatus', 'Your booking successfully submited!!');

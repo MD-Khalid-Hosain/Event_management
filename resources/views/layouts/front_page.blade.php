@@ -105,9 +105,12 @@
                                       @endforeach
                                     </ul>
                                 </li>
+                                @guest
+                                  @else
+                                    <li><a href="{{ route('booking_details') }}">My Booking History</a></li>
+                                @endguest
 
 
-                                <li><a href="contact-us.html">Contact Us</a></li>
 
                             </ul>
                         </nav>
