@@ -64,7 +64,7 @@
                             <h3 class="caption-title"><a href="#">{{ $event_list->events_title }}</a></h3>
 
                             <p class="caption-text">{{ $event_list->events_details }}</p>
-                            <p class="caption-more"><a href="#" class="btn btn-theme">Book</a></p>
+                            
                         </div>
                     </div>
                 </div>
@@ -129,7 +129,7 @@
 
 
 
-  
+
 
   <!-- PAGE LOCATION -->
   <section class="page-section" id="location">
