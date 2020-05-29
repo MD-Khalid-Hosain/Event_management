@@ -17,6 +17,7 @@ class CreateBookingCategoriesTable extends Migration
             $table->id();
             $table->string('booking_category_titel');
             $table->integer('booking_category_price');
+            $table->integer('per_person_cost');
             $table->integer('people_capacity');
             $table->string('decoration');
             $table->string('welcome_drink');

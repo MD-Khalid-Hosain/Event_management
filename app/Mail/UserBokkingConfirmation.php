@@ -19,12 +19,16 @@ class UserBokkingConfirmation extends Mailable
     private $event_location = "";
     private $user_number = "";
     private $event_cost = "";
+    private $per_person_cost = "";
+    private $total_cost = "";
+    private $people = "";
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($user_name,$user_email,$event_title,$event_category,$published_at,$event_location,$user_number,$event_cost)
+    public function __construct($user_name,$user_email,$event_title,$event_category,$published_at,$event_location,$user_number,$event_cost,$per_person_cost,$total_cost,$people)
     {
 
         $this->user_name = $user_name;
@@ -35,6 +39,9 @@ class UserBokkingConfirmation extends Mailable
         $this->event_location = $event_location;
         $this->user_number = $user_number;
         $this->event_cost = $event_cost;
+        $this->per_person_cost = $per_person_cost;
+        $this->total_cost = $total_cost;
+        $this->people = $people;
     }
 
     /**
@@ -52,7 +59,10 @@ class UserBokkingConfirmation extends Mailable
             'published_at' => $this->published_at,
             'event_location' => $this->event_location,
             'user_number' => $this->user_number,
-            'event_cost' => $this->event_cost
+            'event_cost' => $this->event_cost,
+            'per_person_cost' => $this->per_person_cost,
+            'total_cost' => $this->total_cost,
+            'people' => $this->people
         ]);
     }
 }

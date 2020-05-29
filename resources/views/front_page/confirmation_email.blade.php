@@ -9,7 +9,10 @@
 <li>Location: {{ $event_location }}</li>
 <li>Event Date: {{ $published_at }}</li>
 <li>Your Contact Number: {{ $user_number }}</li>
-<li>Total Cost: {{ $event_cost }}</li>
+<li>Event Cost: {{ $event_cost }}</li>
+<li>Per Person Cost: {{ $per_person_cost }}</li>
+<li>People: {{ $people }}</li>
+<li>Total Cost: {{ $total_cost }}</li>
 
 
 <h2>Thank You</h2>

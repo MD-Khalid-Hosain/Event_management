@@ -18,6 +18,10 @@
               <input type="text" name="booking_category_price" class="form-control" id="exampleInputcategoryprice" value="{{ $booking_category->booking_category_price }}" >
             </div>
             <div class="form-group">
+              <label for="per_person_cost">Per Person Cost</label>
+              <input type="text" name="per_person_cost" class="form-control" id="per_person_cost" value="{{ $booking_category->per_person_cost }}" >
+            </div>
+            <div class="form-group">
               <label for="exampleInputPeople">People Capacity</label>
               <input type="text" name="people_capacity" class="form-control" id="exampleInputPeople" value="{{ $booking_category->people_capacity }}" >
             </div>

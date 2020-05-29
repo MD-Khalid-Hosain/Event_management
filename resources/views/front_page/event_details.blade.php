@@ -66,7 +66,8 @@
                           </div>
                           <div class="price-table-rows">
                               <div class="price-table-row"><i class="fa fa-check-circle-o"></i> {{ $booking_category->people_capacity }} People Arrangement</div>
-                              <div class="price-table-row odd"><i class="fa fa-check-circle-o"></i> {{ $booking_category->decoration }}</div>
+                              <div class="price-table-row "><i class="fa fa-check-circle-o"></i> <span style="font-weight: bold;">{{ $booking_category->per_person_cost }} $ Per Person </span></div>
+                              <div class="price-table-row odd "><i class="fa fa-check-circle-o"></i> {{ $booking_category->decoration }}</div>
                               <div class="price-table-row"><i class="fa fa-check-circle-o"></i> {{ $booking_category->welcome_drink }}</div>
                               <div class="price-table-row odd"><i class="fa fa-check-circle-o"></i> {{ $booking_category->coffee }}</div>
                               <div class="price-table-row-bottom">

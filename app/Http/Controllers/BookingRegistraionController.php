@@ -74,7 +74,7 @@ class BookingRegistraionController extends Controller
       'event_category'=> 'required',
       'event_location'=> 'required',
       'user_number'=> 'required',
-      'event_cost'=> 'required'
+      'people'=> 'required'
 
       ]);
       // if ($request->payment_method == 1) {
@@ -94,7 +94,9 @@ class BookingRegistraionController extends Controller
               'published_at' =>Carbon::parse($request->published_at)->format('d/m/Y'),
               'event_location' =>$request->event_location,
               'user_number' =>$request->user_number,
-              'event_cost' =>$request->event_cost
+              'event_cost' =>$request->event_cost,
+              'people' =>$request->people,
+              'per_person_cost' =>$request->per_person_cost
 
             ]);
         }

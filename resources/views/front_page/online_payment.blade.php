@@ -115,8 +115,10 @@
                                 <input type="hidden" name="event_location" value="{{ $event_location }}">
                                 <input type="hidden" name="user_number" value="{{ $user_number }}">
                                 <input type="hidden" name="event_cost" value="{{ $event_cost }}">
+                                <input type="hidden" name="people" value="{{ $people }}">
+                                <input type="hidden" name="per_person_cost" value="{{ $per_person_cost }}">
 
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now (${{ $event_cost }})</button>
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now (${{ $event_cost +($people*$per_person_cost) }})</button>
                             </div>
                         </div>
 

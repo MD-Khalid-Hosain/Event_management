@@ -17,44 +17,48 @@
   <div class="container">
       <div class="row">
           <div class="col-md-12">
-            @foreach ($booking_details as $event_details)
+            @foreach ($booking_details as $booking_detail)
 
               <table class="table table-borderless">
                   <tr>
                     <th scope="col">Your Name:</th>
-                    <td>{{ $event_details->user_name }}</td>
+                    <td>{{ $booking_detail->user_name }}</td>
                   </tr>
                   <tr>
                     <th scope="col">Email:</th>
-                    <td>{{ $event_details->user_email }}</td>
+                    <td>{{ $booking_detail->user_email }}</td>
                   </tr>
                   <tr>
                     <th scope="col">Phone Number:</th>
-                    <td>{{ $event_details->user_number }}</td>
+                    <td>{{ $booking_detail->user_number }}</td>
                   </tr>
                   <tr>
                     <th scope="col">Event Title:</th>
-                    <td>{{ $event_details->event_title }}</td>
+                    <td>{{ $booking_detail->event_title }}</td>
                   </tr>
                   <tr>
                     <th scope="col">Event Category:</th>
-                    <td>{{ $event_details->event_category }}</td>
+                    <td>{{ $booking_detail->event_category }}</td>
                   </tr>
                   <tr>
                     <th scope="col">Event Date:</th>
-                    <td>{{ $event_details->published_at }}</td>
+                    <td>{{ $booking_detail->published_at }}</td>
                   </tr>
                   <tr>
                     <th scope="col">Event Location:</th>
-                    <td>{{ $event_details->event_location }}</td>
+                    <td>{{ $booking_detail->event_location }}</td>
                   </tr>
                   <tr>
                     <th scope="col">Event Booking Date</th>
-                    <td>{{ $event_details->created_at }}</td>
+                    <td>{{ $booking_detail->created_at }}</td>
                   </tr>
                   <tr>
-                    <th scope="col">Event Cost</th>
-                    <td style="font-weight: 900;">{{  $event_details->event_cost }}</td>
+                    <th scope="col">Total Cost</th>
+                    <td style="font-weight: 900;">{{  $booking_detail->total_cost }}$</td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Payment Status</th>
+                    <td >@php if ($booking_detail->payment_status == 2) { echo "<h2>Paid</h2>"; }  @endphp </td>
                   </tr>
 
 

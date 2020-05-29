@@ -17,6 +17,10 @@
               <input type="text" name="booking_category_price" class="form-control" id="exampleInputcategoryprice" >
             </div>
             <div class="form-group">
+              <label for="per_person_cost">Per Person Cost</label>
+              <input type="text" name="per_person_cost" class="form-control" id="per_person_cost" >
+            </div>
+            <div class="form-group">
               <label for="exampleInputPeople">People Capacity</label>
               <input type="text" name="people_capacity" class="form-control" id="exampleInputPeople" >
             </div>
@@ -46,11 +50,12 @@
               <table id="datatable1" class="table display responsive nowrap">
                 <thead>
                   <tr>
-                    <th class="wd-15p">SL No.</th>
+
                     <th class="wd-15p">ID</th>
                     <th class="wd-20p">Title</th>
                     <th class="wd-15p">Price</th>
-                    <th class="wd-10p">Capacity</th>
+                    <th class="wd-15p">Per Person Cost</th>
+                    <th class="wd-10p">People Capacity</th>
                     <th class="wd-25p">Decoration</th>
                     <th class="wd-25p">Welcome Drink</th>
                     <th class="wd-25p">Coffee</th>
@@ -60,10 +65,11 @@
                 <tbody>
                   @forelse ($booking_Categories as $booking_Category)
                   <tr>
-                    <td>{{ $loop->index + 1 }}</td>
+
                     <td>{{$booking_Category->id}}</td>
                     <td>{{$booking_Category->booking_category_titel}}</td>
-                    <td>{{$booking_Category->booking_category_price}}</td>
+                    <td>{{$booking_Category->booking_category_price}}$</td>
+                    <td>{{$booking_Category->per_person_cost}}$</td>
                     <td>{{$booking_Category->people_capacity}}</td>
                     <td>{{$booking_Category->decoration}}</td>
                     <td>{{$booking_Category->welcome_drink}}</td>

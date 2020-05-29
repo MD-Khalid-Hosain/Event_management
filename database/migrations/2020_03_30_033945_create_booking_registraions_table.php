@@ -22,7 +22,10 @@ class CreateBookingRegistraionsTable extends Migration
             $table->string('event_category');
             $table->string('published_at');
             $table->string('event_location');
-            $table->string('event_cost');
+            $table->integer('event_cost');
+            $table->integer('per_person_cost');
+            $table->integer('total_cost');
+            $table->integer('people');
             $table->integer('payment_method');
             $table->integer('payment_status')->default(1);
             $table->integer('user_number');

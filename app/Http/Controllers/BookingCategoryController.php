@@ -46,6 +46,7 @@ class BookingCategoryController extends Controller
         Booking_Category::create([
           'booking_category_titel' =>$request->booking_category_titel,
           'booking_category_price' =>$request->booking_category_price,
+          'per_person_cost' =>$request->per_person_cost,
           'people_capacity'        =>$request->people_capacity,
           'decoration' =>$request->decoration,
           'welcome_drink' =>$request->welcome_drink,
@@ -90,6 +91,7 @@ class BookingCategoryController extends Controller
         $booking_category->booking_category_titel  = $request->booking_category_titel;
         $booking_category->booking_category_price  = $request->booking_category_price;
         $booking_category->people_capacity  = $request->people_capacity;
+        $booking_category->per_person_cost  = $request->per_person_cost;
         $booking_category->decoration  = $request->decoration;
         $booking_category->welcome_drink  = $request->welcome_drink;
         $booking_category->coffee  = $request->coffee;
