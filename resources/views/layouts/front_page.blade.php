@@ -25,6 +25,8 @@
         <link href="{{ asset('homepage_assets/assets/css/theme.css') }}" rel="stylesheet">
         <link href="{{ asset('homepage_assets/assets/css/custom.css') }}" rel="stylesheet">
 
+        @yield('header_script')
+
 
     </head>
     <body id="home" class="wide body-light multipage">
@@ -91,7 +93,7 @@
                         <!-- Navigation -->
                         <div id="mobile-menu"></div>
                         <nav class="navigation closed clearfix">
-                            <a href="#" class="menu-toggle btn"><i class="fa fa-bars"></i></a>
+                          
                             <ul class="sf-menu nav">
                                 <li class="active">
                                     <a href="{{ route('home_page') }}">Home</a>
@@ -317,6 +319,7 @@
         });
 
     </script>
+    @yield('footer_script')
 
 </body>
 

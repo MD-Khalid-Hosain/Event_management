@@ -17,6 +17,7 @@ class BookingRegistraionController extends Controller
   public function __construct()
   {
       $this->middleware('auth');
+      $this->middleware('verified');
   }
     /**
      * Display a listing of the resource.
@@ -76,23 +77,40 @@ class BookingRegistraionController extends Controller
       'event_cost'=> 'required'
 
       ]);
-
+      // if ($request->payment_method == 1) {
+      //
+      // }
       if(BookingRegistraion::where('published_at', Carbon::parse($request->published_at))->where('event_location', $request->event_location)->exists()){
         return back()->with('status', 'Your submited date and location is already booked!!');
       }
       else{
-        BookingRegistraion::create([
-          'user_name' =>$request->user_name,
-          'user_email' =>$request->user_email,
-          'event_title' =>$request->event_title,
-          'event_category' =>$request->event_category,
-          'published_at' =>Carbon::parse($request->published_at)->format('d/m/Y'),
-          'event_location' =>$request->event_location,
-          'user_number' =>$request->user_number,
-          'event_cost' =>$request->event_cost,
-          'created_at' =>Carbon::now()
-        ]);
-          return redirect(route('booking_details'))->with('successstatus', 'Your booking successfully submited!!');
+        if ($request->payment_method == 1) {
+            return view('front_page.online_payment',[
+              'event_lists' => Event::all(),
+              'user_name' =>$request->user_name,
+              'user_email' =>$request->user_email,
+              'event_title' =>$request->event_title,
+              'event_category' =>$request->event_category,
+              'published_at' =>Carbon::parse($request->published_at)->format('d/m/Y'),
+              'event_location' =>$request->event_location,
+              'user_number' =>$request->user_number,
+              'event_cost' =>$request->event_cost
+
+            ]);
+        }
+        // BookingRegistraion::create([
+        //   'user_name' =>$request->user_name,
+        //   'user_email' =>$request->user_email,
+        //   'event_title' =>$request->event_title,
+        //   'event_category' =>$request->event_category,
+        //   'published_at' =>Carbon::parse($request->published_at)->format('d/m/Y'),
+        //   'event_location' =>$request->event_location,
+        //   'user_number' =>$request->user_number,
+        //   'event_cost' =>$request->event_cost,
+        //   'created_at' =>Carbon::now()
+        // ]);
+          // return redirect(route('booking_details'))->with('successstatus', 'Your booking successfully submited!!');
+
       }
     }
 

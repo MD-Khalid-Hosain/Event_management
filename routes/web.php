@@ -21,8 +21,9 @@ Route::get('/event/category/{details_id}', 'BookingRegistraionController@with_ca
 
 Route::get('/event/details/page', 'FrontendController@event_details_page')->name('event_details_page');
 Route::get('/event/details/show/{details_id}', 'FrontendController@event_details')->name('event_details');
+//payment Controller
+Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
 
-
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');

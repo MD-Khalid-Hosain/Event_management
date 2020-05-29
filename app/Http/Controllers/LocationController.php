@@ -10,6 +10,11 @@ use Image;
 
 class LocationController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth');
+    $this->middleware('verified');
+  }
     /**
      * Display a listing of the resource.
      *
@@ -39,6 +44,14 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
+
+      $request->validate([
+      'city_name'=> 'required',
+      'city_address'=> 'required',
+      'location_photo'=> 'required'
+
+      ]);
+
       $create_new_location = Location::create([
         'city_name'   =>$request->city_name,
         'city_address' =>$request->city_address,
@@ -58,7 +71,7 @@ class LocationController extends Controller
           'location_photo'=>$location_photo_name
         ]);
       }
-      return back();
+      return back()->with('locaiton_error', 'your event location is added successfully !!!');
     }
 
     /**

@@ -6,21 +6,38 @@
     <div class="row">
         <div class="col-md-12">
           <h6 class="card-body-title">Add Event Location</h6>
-
+          {{-- @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif --}}
           <form action="{{ route('locations.store') }}" method="post"enctype="multipart/form-data" >
             @csrf
             <div class="form-group">
               <label for="exampleInputEventTitle">City</label>
               <input type="text" name="city_name" class="form-control" id="exampleInputEventTitle" >
+              @error ('city_name')
+                <p class="text-danger">{{ $message }}</p>
+              @enderror
             </div>
 
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Full Address</label>
               <textarea class="form-control" name="city_address" id="exampleFormControlTextarea1" rows="3"></textarea>
+              @error ('city_address')
+                <p class="text-danger">{{ $message }}</p>
+              @enderror
             </div>
             <div class="form-group">
                 <label for="exampleFormControlphoto">Photo</label>
                 <input type="file" name="location_photo" class="form-control">
+                @error ('location_photo')
+                  <p class="text-danger">{{ $message }}</p>
+                @enderror
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
@@ -63,7 +80,7 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <button class="btn btn-danger text-white"><i class="fa fa-trash"></i></button>
                         </form>
-                      
+
                       </div>
                     </td>
                   </tr>

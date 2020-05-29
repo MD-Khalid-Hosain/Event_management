@@ -61,7 +61,7 @@
                                   <h2 class="price-label-title">{{ $booking_category->booking_category_titel }}</h2>
                               </div>
                               <div class="price-value">
-                                  <span class="price-number">{{ $booking_category->booking_category_price }}</span><span class="price-unit">K</span><span class="price-per"></span>
+                                  <span class="price-number">{{ $booking_category->booking_category_price }}</span><span class="price-unit">$</span><span class="price-per"></span>
                               </div>
                           </div>
                           <div class="price-table-rows">
@@ -249,13 +249,3 @@
   </section>
   <!-- /PAGE -->
 @endsection
-
-
-
-<!-- Content area -->
-      <div class="content-area">
-
-
-
-            </div>
-<!-- /Content area -->
