@@ -85,7 +85,7 @@
               <input type="text" name="people" class="form-control" id="mobile">
             </div>
             <div class="form-group  col-md-12">
-              <label for="cost">Total Cost</label>
+              
               <input type="hidden" name="event_cost" readonly class="form-control" id="cost" value="{{ $booking_category_title->booking_category_price  }}">
               <input type="hidden" name="per_person_cost" readonly class="form-control" id="cost" value="{{ $booking_category_title->per_person_cost  }}">
             </div>

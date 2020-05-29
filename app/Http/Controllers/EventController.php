@@ -16,6 +16,7 @@ class EventController extends Controller
   {
     $this->middleware('auth');
     $this->middleware('verified');
+    $this->middleware('checkrole');
   }
     /**
      * Display a listing of the resource.
@@ -60,7 +61,7 @@ class EventController extends Controller
         $create_new_event = Event::create([
           'events_title'   =>$request->events_title,
           'events_details' =>$request->events_details,
-          'events_photo' =>'khalid.jpg',
+          'events_photo' =>'anika.jpg',
           'created_at'     =>Carbon::now()
         ]);
 

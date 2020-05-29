@@ -14,6 +14,7 @@ class LocationController extends Controller
   {
     $this->middleware('auth');
     $this->middleware('verified');
+    $this->middleware('checkrole');
   }
     /**
      * Display a listing of the resource.
