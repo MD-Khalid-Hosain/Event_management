@@ -18,6 +18,7 @@ class BookingRegistraionController extends Controller
   {
       $this->middleware('auth');
       $this->middleware('verified');
+      
   }
     /**
      * Display a listing of the resource.

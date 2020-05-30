@@ -2,49 +2,9 @@
 
 
 @section('content')
-  <div class="container">
+
     <div class="row">
-        <div class="col-md-12">
-          <h6 class="card-body-title">Add Event Location</h6>
-          {{-- @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif --}}
-          <form action="{{ route('locations.store') }}" method="post"enctype="multipart/form-data" >
-            @csrf
-            <div class="form-group">
-              <label for="exampleInputEventTitle">City</label>
-              <input type="text" name="city_name" class="form-control" id="exampleInputEventTitle" >
-              @error ('city_name')
-                <p class="text-danger">{{ $message }}</p>
-              @enderror
-            </div>
-
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1">Full Address</label>
-              <textarea class="form-control" name="city_address" id="exampleFormControlTextarea1" rows="3"></textarea>
-              @error ('city_address')
-                <p class="text-danger">{{ $message }}</p>
-              @enderror
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlphoto">Photo</label>
-                <input type="file" name="location_photo" class="form-control">
-                @error ('location_photo')
-                  <p class="text-danger">{{ $message }}</p>
-                @enderror
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-        </div><!-- card -->
-
-
-        <div class="col-md-12 my-5">
+        <div class="col-md-6">
           <div class="card pd-10 pd-sm-20">
             <h6 class="card-body-title">Event location list</h6>
 
@@ -97,8 +57,45 @@
           </div><!-- card -->
 
         </div>
+        <div class="col-md-6">
+          <h6 class="card-body-title">Add Event Location</h6>
+          {{-- @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif --}}
+          <form action="{{ route('locations.store') }}" method="post"enctype="multipart/form-data" >
+            @csrf
+            <div class="form-group">
+              <label for="exampleInputEventTitle">City</label>
+              <input type="text" name="city_name" class="form-control" id="exampleInputEventTitle" >
+              @error ('city_name')
+                <p class="text-danger">{{ $message }}</p>
+              @enderror
+            </div>
 
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Full Address</label>
+              <textarea class="form-control" name="city_address" id="exampleFormControlTextarea1" rows="3"></textarea>
+              @error ('city_address')
+                <p class="text-danger">{{ $message }}</p>
+              @enderror
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlphoto">Photo</label>
+                <input type="file" name="location_photo" class="form-control">
+                @error ('location_photo')
+                  <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div><!-- card -->
     </div>
-  </div>
+
 
 @endsection

@@ -1,23 +1,26 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
-                    welcome
-                </div>
-            </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <div class="card">
+          <div class="card-header">
+            Sale of Last 7 Days
+          </div>
+          <div class="card-body">
+
+
+
+            {{ $seven_days_booking_chart->container() }}
+            {{ $seven_days_booking_chart->script() }}
+
+          </div>
         </div>
-    </div>
-</div>
+        </div>
+
+      </div>
+
+
 @endsection

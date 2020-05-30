@@ -1,9 +1,9 @@
 @extends('layouts.dashboard')
 
 @section('content')
-  <div class="container">
+
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6">
           <h6 class="card-body-title">Add Booking Category</h6>
 
           <form action="{{ route('booking_category.store') }}" method="post"enctype="multipart/form-data" >
@@ -41,7 +41,7 @@
           </form>
         </div><!-- card -->
 
-        <div class="col-md-8">
+        <div class="col-md-6">
           <div class="card pd-10 pd-lg-10">
             <h6 class="card-body-title">Booking Category List</h6>
 
@@ -102,5 +102,5 @@
 
         </div>
       </div>
-    </div>
+
 @endsection

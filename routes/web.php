@@ -27,3 +27,4 @@ Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post')
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/user/list', 'HomeController@user_list')->name('user_list');

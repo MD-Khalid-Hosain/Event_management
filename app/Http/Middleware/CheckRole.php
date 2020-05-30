@@ -18,7 +18,7 @@ class CheckRole
       if (Auth::user()->role_id == 2) {
         return redirect('/');
       }
-    
+
         return $next($request);
     }
 }

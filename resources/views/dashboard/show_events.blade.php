@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('content')
-  <div class="container">
+
     <div class="row">
       <div class="col-md-12">
         <div class="card pd-10 pd-sm-20">
@@ -58,5 +58,5 @@
 
       </div>
     </div>
-  </div>
+  
 @endsection
