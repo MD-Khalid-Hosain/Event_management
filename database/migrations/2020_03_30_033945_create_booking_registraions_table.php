@@ -20,7 +20,7 @@ class CreateBookingRegistraionsTable extends Migration
             $table->string('user_email');
             $table->string('event_title');
             $table->string('event_category');
-            $table->string('published_at');
+            $table->date('published_at');
             $table->string('event_location');
             $table->integer('event_cost');
             $table->integer('per_person_cost');

@@ -30,8 +30,11 @@ class EventController extends Controller
     public function event_booked_list()
 
     {
-      $event_booked_list = BookingRegistraion::all();
-        return view('dashboard.event_booked_list', compact('event_booked_list'));
+    $finished_events = BookingRegistraion::where('published_at', '<',Carbon::now()->format('Y-m-d'))->get();
+    $up_comming_events = BookingRegistraion::where('published_at', '>=',Carbon::now()->format('Y-m-d'))->get();
+
+
+        return view('dashboard.event_booked_list', compact('finished_events','up_comming_events'));
     }
 
     /**

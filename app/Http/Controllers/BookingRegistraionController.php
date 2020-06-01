@@ -18,7 +18,7 @@ class BookingRegistraionController extends Controller
   {
       $this->middleware('auth');
       $this->middleware('verified');
-      
+
   }
     /**
      * Display a listing of the resource.
@@ -92,7 +92,7 @@ class BookingRegistraionController extends Controller
               'user_email' =>$request->user_email,
               'event_title' =>$request->event_title,
               'event_category' =>$request->event_category,
-              'published_at' =>Carbon::parse($request->published_at)->format('d/m/Y'),
+              'published_at' =>$request->published_at,
               'event_location' =>$request->event_location,
               'user_number' =>$request->user_number,
               'event_cost' =>$request->event_cost,

@@ -55,7 +55,7 @@
                             <div class="caption hovered">
                                 <div class="caption-wrapper div-table">
                                     <div class="caption-inner div-cell">
-                                        <p class="caption-buttons"><a href="{{ route('event_details', $event_list->id) }}" class="btn btn-theme caption-link"><i class="fa fa-file-text"></i> Details</a></p>
+                                        <p class="caption-buttons"><a href="{{ route('event_details', $event_list->id) }}" class="btn btn-theme caption-link"><i class="fa fa-file-text"></i> Event Details</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                             <h3 class="caption-title"><a href="#">{{ $event_list->events_title }}</a></h3>
 
                             <p class="caption-text">{{ $event_list->events_details }}</p>
-                            
+
                         </div>
                     </div>
                 </div>

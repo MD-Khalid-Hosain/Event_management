@@ -28,6 +28,7 @@ class ComposerStaticInit994a2a0f25c141409ec5fe9d28b293e7
         'b6ec61354e97f32c0ae683041c78392a' => __DIR__ . '/..' . '/scrivo/highlight.php/HighlightUtilities/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        'b4e3f29b106af37a2bb239f73cdf68c7' => __DIR__ . '/../..' . '/app/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -490,6 +491,7 @@ class ComposerStaticInit994a2a0f25c141409ec5fe9d28b293e7
     public static $classMap = array (
         'App\\BookingRegistraion' => __DIR__ . '/../..' . '/app/BookingRegistraion.php',
         'App\\Booking_Category' => __DIR__ . '/../..' . '/app/Booking_Category.php',
+        'App\\Charts\\SevenDaysBookingChart' => __DIR__ . '/../..' . '/app/Charts/SevenDaysBookingChart.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Event' => __DIR__ . '/../..' . '/app/Event.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',

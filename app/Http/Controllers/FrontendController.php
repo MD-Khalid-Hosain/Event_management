@@ -14,10 +14,7 @@ class FrontendController extends Controller
       $location_lists = Location::all();
         return view('front_page.index', compact('event_lists','location_lists'));
       }
-    public function event_details_page() {
 
-        return view('front_page.event_details');
-      }
     public function event_details($details_id) {
         $event_lists = Event::all();
         $booking_categories = Booking_Category::all();
@@ -25,5 +22,5 @@ class FrontendController extends Controller
         return view('front_page.event_details', compact('single_event_details','booking_categories','event_lists'));
 
       }
-      
+
 }

@@ -59,7 +59,7 @@
           <div class="form-row">
             <div class="form-group  col-md-6">
               <label for="Date">Date</label>
-              <input type="date" name="published_at" class="form-control" id="Date">
+              <input type="date" name="published_at" class="form-control" id="Date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
               @error ('published_at')
                 <small class="text-danger">{{ $message }}</small>
               @enderror
@@ -85,7 +85,7 @@
               <input type="text" name="people" class="form-control" id="mobile">
             </div>
             <div class="form-group  col-md-12">
-              
+
               <input type="hidden" name="event_cost" readonly class="form-control" id="cost" value="{{ $booking_category_title->booking_category_price  }}">
               <input type="hidden" name="per_person_cost" readonly class="form-control" id="cost" value="{{ $booking_category_title->per_person_cost  }}">
             </div>

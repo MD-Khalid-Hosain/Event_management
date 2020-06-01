@@ -294,10 +294,11 @@
     <script src="{{ asset('dashboard_assets/lib/popper.js/popper.js') }}"></script>
     <script src="{{ asset('dashboard_assets/lib/bootstrap/bootstrap.js') }}"></script>
     <script src="{{ asset('dashboard_assets/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js') }}"></script>
-
+    <script src="{{ asset('dashboard_assets/lib/jquery.sparkline.bower/jquery.sparkline.min.js') }}"></script>
     <script src="{{ asset('dashboard_assets/js/starlight.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+    @yield('footer_script')
 
   </body>
 </html>

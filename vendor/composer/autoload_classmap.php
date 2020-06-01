@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\BookingRegistraion' => $baseDir . '/app/BookingRegistraion.php',
     'App\\Booking_Category' => $baseDir . '/app/Booking_Category.php',
+    'App\\Charts\\SevenDaysBookingChart' => $baseDir . '/app/Charts/SevenDaysBookingChart.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Event' => $baseDir . '/app/Event.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',

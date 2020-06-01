@@ -32,7 +32,39 @@ class HomeController extends Controller
      */
     public function index()
     {
+      // echo BookingRegistraion::sum('total_cost');
+      // die();
+    // for ($i=1; $i <=30 ; $i++) {
+    //   echo "<br>";
+    //   echo Carbon::now()->subDays(30-$i)->format('Y-m-d');
+    //         echo "<br>";
+    // }
+    // echo Carbon::now()->lastOfMonth();
+    // echo $start = Carbon::now()->startOfMonth()->format('Y-m-d');
+    // echo $start = new Carbon('first day of last month');
+    // echo $end = new Carbon('last day of last month');
+  // echo BookingRegistraion::whereMonth('created_at', '>', Carbon::now()->format('Y-m-d'));
+//   $posts = BookingRegistraion::orderBy('created_at', 'DESC')
+//       ->whereDate('created_at', '<', \Carbon\Carbon::now()->subMonth())
+//       ->get();
+// echo $posts;
+
+
+// echo Carbon::now()->subMonth()->month;
+// echo $revenueMonth = BookingRegistraion::whereMonth(
+// 'created_at', '=', Carbon::now()->subMonth()->month
+// )->get();
+// echo $data = BookingRegistraion::whereBetween('created_at',['start','end']->count();
+// echo Carbon::now()->subYear();
+// echo "<br>";
+// echo Carbon::now()->subMonthNoOverflow();
+
+
+
       if(Auth::user()->role_id==1){
+        $this_month_payment = BookingRegistraion::whereMonth('created_at', Carbon::now())->sum('total_cost');
+        $this_month_booked = BookingRegistraion::where('payment_status', 2)->count();
+        //chart for 7days start
 
         for ($i=1; $i <=7; $i++) {
         $date[] = Carbon::now()->subDays(7-$i)->format('Y-m-d');
@@ -43,9 +75,9 @@ class HomeController extends Controller
 
         $seven_days_booking_chart = new SevenDaysBookingChart;
         $seven_days_booking_chart->labels($date);
-        $seven_days_booking_chart->dataset('My dataset 2', 'bar', $booking);
-
-          return view('home',compact('seven_days_booking_chart'));
+        $seven_days_booking_chart->dataset('Last 7 Days Details', 'bar', $booking);
+        //chart for 7days end
+          return view('home',compact('seven_days_booking_chart','this_month_payment', 'this_month_booked'));
       }
       else{
         $event_lists = Event::all();
