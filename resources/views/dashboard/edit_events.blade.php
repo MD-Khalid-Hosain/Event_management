@@ -21,6 +21,7 @@
                 {{ $event->events_details }}
               </textarea>
             </div>
+
             <div class="form-group">
                 <label for="exampleFormControlphoto">Present Photo</label><br>
                 <img src="{{ asset('uploads/events') }}/{{ $event->events_photo }}" alt="" width="100">

@@ -59,7 +59,7 @@
           <div class="form-row">
             <div class="form-group  col-md-6">
               <label for="Date">Date</label>
-              <input type="date" name="published_at" class="form-control" id="Date" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}">
+              <input type="date" name="published_at" class="form-control" id="Date" >
               @error ('published_at')
                 <small class="text-danger">{{ $message }}</small>
               @enderror
@@ -78,11 +78,17 @@
           <div class="form-row">
             <div class="form-group  col-md-6">
               <label for="mobile">Mobile Number</label>
-              <input type="text" name="user_number" class="form-control" id="mobile">
+              <input type="text" name="user_number" class="form-control" id="mobile" value="{{ old('user_number') }}">
+              @error ('user_number')
+                <small class="text-danger">{{ $message }}</small>
+              @enderror
             </div>
             <div class="form-group  col-md-6">
               <label for="mobile">How many people</label>
-              <input type="text" name="people" class="form-control" id="mobile">
+              <input type="text" name="people" class="form-control" id="mobile" value="{{ old('people') }}">
+              @error ('people')
+                <small class="text-danger">{{ $message }}</small>
+              @enderror
             </div>
             <div class="form-group  col-md-12">
 
@@ -90,6 +96,14 @@
               <input type="hidden" name="per_person_cost" readonly class="form-control" id="cost" value="{{ $booking_category_title->per_person_cost  }}">
             </div>
           </div>
+          <div class="form-group  col-md-12">
+              <label for="Location">Select Your Time Slot</label>
+              <select id="Location" class="form-control" name="event_time">
+                <option selected>Select Your Time</option>
+                  <option value="01:00pm to 04:00pm">01:00pm to 04:00pm Day</option>
+                  <option value="07:00pm to 10:00pm">07:00pm to 10:00pm Night</option>
+              </select>
+            </div>
           <input type="hidden" name="payment_method" value="1">
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>

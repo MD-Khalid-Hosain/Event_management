@@ -44,7 +44,7 @@
                       @if ( $up_comming_event->published_at >=\Carbon\Carbon::now()->format('Y-m-d'))
 
                         <h4><span class="badge badge-success">Comming</span></h4>
-                        
+
                       @endif
 
                   </td>
@@ -76,6 +76,8 @@
         </div><!-- card -->
 
       </div>
+
+
       <div class="col-md-12">
         <div class="card pd-10 pd-sm-20">
           <h6 class="card-body-title">Completed Events List</h6>
@@ -94,6 +96,7 @@
                   <th >Event Name</th>
                   <th >Category</th>
                   <th >Location</th>
+                  <th >Event Time</th>
                   <th >Booked Date</th>
                   <th >Status</th>
                   <th >Booking Created</th>
@@ -111,6 +114,7 @@
                   <td>{{$finished_event->event_title}}</td>
                   <td>{{$finished_event->event_category}}</td>
                   <td>{{$finished_event->event_location}}</td>
+                  <td>{{$finished_event->event_time}}</td>
                   <td>{{$finished_event->published_at}}</td>
                   <td>
 

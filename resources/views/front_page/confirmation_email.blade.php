@@ -8,6 +8,7 @@
 <li>Category: {{ $event_category }}</li>
 <li>Location: {{ $event_location }}</li>
 <li>Event Date: {{ $published_at }}</li>
+<li>Event Time: {{ $event_time }}</li>
 <li>Your Contact Number: {{ $user_number }}</li>
 <li>Event Cost: {{ $event_cost }}$</li>
 <li>Per Person Cost: {{ $per_person_cost }}$</li>

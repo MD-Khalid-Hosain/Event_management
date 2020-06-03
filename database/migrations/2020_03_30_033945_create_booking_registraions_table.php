@@ -22,6 +22,7 @@ class CreateBookingRegistraionsTable extends Migration
             $table->string('event_category');
             $table->date('published_at');
             $table->string('event_location');
+            $table->string('event_time');
             $table->integer('event_cost');
             $table->integer('per_person_cost');
             $table->integer('total_cost');
@@ -30,6 +31,7 @@ class CreateBookingRegistraionsTable extends Migration
             $table->integer('payment_status')->default(1);
             $table->integer('user_number');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

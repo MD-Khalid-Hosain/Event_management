@@ -12,6 +12,7 @@ class UserBokkingConfirmation extends Mailable
     use Queueable, SerializesModels;
 
     private $user_name  = "";
+    private $event_time  = "";
     private $user_email = "";
     private $event_title = "";
     private $event_category = "";
@@ -28,10 +29,11 @@ class UserBokkingConfirmation extends Mailable
      *
      * @return void
      */
-    public function __construct($user_name,$user_email,$event_title,$event_category,$published_at,$event_location,$user_number,$event_cost,$per_person_cost,$total_cost,$people)
+    public function __construct($user_name,$user_email,$event_title,$event_category,$published_at,$event_location,$user_number,$event_cost,$per_person_cost,$total_cost,$people,$event_time)
     {
 
         $this->user_name = $user_name;
+        $this->event_time = $event_time;
         $this->user_email = $user_email;
         $this->event_title = $event_title;
         $this->event_category = $event_category;
@@ -53,6 +55,7 @@ class UserBokkingConfirmation extends Mailable
     {
         return $this->view('front_page.confirmation_email',[
             'user_name' => $this->user_name,
+            'event_time' => $this->event_time,
             'user_email' => $this->user_email,
             'event_title' => $this->event_title,
             'event_category' => $this->event_category,

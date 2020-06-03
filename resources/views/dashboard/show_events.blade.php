@@ -16,6 +16,7 @@
                   <th class="wd-15p">ID</th>
                   <th class="wd-20p">Event Title</th>
                   <th class="wd-15p">Details</th>
+                  
                   <th class="wd-10p">Photo</th>
                   <th class="wd-25p">Action</th>
                 </tr>
@@ -27,6 +28,7 @@
                   <td>{{$event_list->id}}</td>
                   <td>{{$event_list->events_title}}</td>
                   <td>{{$event_list->events_details}}</td>
+
 
                   <td>
                       <img width="50" src="{{ asset('uploads/events') }}/{{ $event_list->events_photo }}" alt="{{ $event_list->event_photo }}">
@@ -58,5 +60,5 @@
 
       </div>
     </div>
-  
+
 @endsection

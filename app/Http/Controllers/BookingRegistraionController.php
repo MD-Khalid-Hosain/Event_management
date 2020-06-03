@@ -74,15 +74,16 @@ class BookingRegistraionController extends Controller
       'event_title'=> 'required',
       'event_category'=> 'required',
       'event_location'=> 'required',
-      'user_number'=> 'required',
-      'people'=> 'required'
+      'event_time'=> 'required',
+      'user_number'=> 'required|numeric|min:11',
+      'people'=> 'required|numeric|max:500'
 
       ]);
       // if ($request->payment_method == 1) {
       //
       // }
-      if(BookingRegistraion::where('published_at', Carbon::parse($request->published_at))->where('event_location', $request->event_location)->exists()){
-        return back()->with('status', 'Your submited date and location is already booked!!');
+      if(BookingRegistraion::where('published_at', Carbon::parse($request->published_at))->where('event_location', $request->event_location)->where('event_time', $request->event_time)->exists()){
+        return back()->with('status', 'Your submited date, time and location is already booked!!');
       }
       else{
         if ($request->payment_method == 1) {
@@ -94,11 +95,11 @@ class BookingRegistraionController extends Controller
               'event_category' =>$request->event_category,
               'published_at' =>$request->published_at,
               'event_location' =>$request->event_location,
+              'event_time' =>$request->event_time,
               'user_number' =>$request->user_number,
               'event_cost' =>$request->event_cost,
               'people' =>$request->people,
               'per_person_cost' =>$request->per_person_cost
-
             ]);
         }
         // BookingRegistraion::create([
@@ -107,7 +108,7 @@ class BookingRegistraionController extends Controller
         //   'event_title' =>$request->event_title,
         //   'event_category' =>$request->event_category,
         //   'published_at' =>Carbon::parse($request->published_at)->format('d/m/Y'),
-        //   'event_location' =>$request->event_location,
+        //   'eve4242nt_location' =>$request->event_location,
         //   'user_number' =>$request->user_number,
         //   'event_cost' =>$request->event_cost,
         //   'created_at' =>Carbon::now()

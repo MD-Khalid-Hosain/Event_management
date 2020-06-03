@@ -17,6 +17,7 @@
               <label for="exampleFormControlTextarea1">Event Details</label>
               <textarea class="form-control" name="events_details" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
+          
             <div class="form-group">
                 <label for="exampleFormControlphoto">Photo</label>
                 <input type="file" name="events_photo" class="form-control">

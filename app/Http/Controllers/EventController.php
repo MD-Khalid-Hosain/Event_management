@@ -130,6 +130,7 @@ class EventController extends Controller
         }
         $event->events_title = $request->events_title;
         $event->events_details = $request->events_details;
+        
         $event->save();
 
         return redirect('event/show');
