@@ -15,6 +15,7 @@
     <link href="{{ asset('dashboard_assets/lib/Ionicons/css/ionicons.css') }}" rel="stylesheet">
     <link href="{{ asset('dashboard_assets/lib/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet">
 
+    @yield('header_script')
 
     <!-- Starlight CSS -->
     <link rel="stylesheet" href="{{ asset('dashboard_assets/css/starlight.css') }}">
@@ -69,6 +70,12 @@
           <div class="sl-menu-item">
             <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
             <span class="menu-item-label">Events Booked List </span>
+          </div><!-- menu-item -->
+        </a><!-- sl-menu-link -->
+        <a href="{{ route('event_comming_and_finished') }}" class="sl-menu-link">
+          <div class="sl-menu-item">
+            <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
+            <span class="menu-item-label">Events Comming & Finished</span>
           </div><!-- menu-item -->
         </a><!-- sl-menu-link -->
         <a href="{{ route('user_list') }}" class="sl-menu-link">
@@ -298,7 +305,11 @@
     <script src="{{ asset('dashboard_assets/js/starlight.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+
     @yield('footer_script')
 
+
+<script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
+ @stack('script')
   </body>
 </html>

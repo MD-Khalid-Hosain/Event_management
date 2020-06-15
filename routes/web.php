@@ -9,7 +9,12 @@ Route::get('/', 'FrontendController@home_page')->name('home_page');
 
 // all event controller
 Route::resource('events', 'EventController');
-Route::get('event/booked/details', 'EventController@event_booked_list')->name('event_booked_list');
+Route::get('/event_booked_details', 'EventController@event_booked_list')->name('event_booked_list');
+// Route::post('/event_booked_details', 'EventController@event_booked_list')->name('event_booked_list');
+Route::get('event/search', 'EventController@event_booked_list')->name('event_search');
+Route::get('event/comming/finished', 'EventController@event_comming_and_finished')->name('event_comming_and_finished');
+
+
 Route::get('/event/show', 'EventController@event_show')->name('event_show');
 Route::resource('locations', 'LocationController');
 Route::resource('booking_category', 'BookingCategoryController');

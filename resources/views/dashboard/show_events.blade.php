@@ -16,7 +16,7 @@
                   <th class="wd-15p">ID</th>
                   <th class="wd-20p">Event Title</th>
                   <th class="wd-15p">Details</th>
-                  
+
                   <th class="wd-10p">Photo</th>
                   <th class="wd-25p">Action</th>
                 </tr>

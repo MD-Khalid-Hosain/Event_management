@@ -8,6 +8,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Image;
+use DB;
+use App\Datatables\BookingRegistraionDataTable;
+// use Maatwebsite\Excel\Facades\Excel;
+use PDF;
+// use App\Exports\UsersExport;
 
 class EventController extends Controller
 {
@@ -27,21 +32,40 @@ class EventController extends Controller
     {
         return view('dashboard.add_event');
     }
-    public function event_booked_list()
+
+    //event booked list for pdf start
+    public function event_booked_list(BookingRegistraionDataTable $event_data, Request $request)
 
     {
-    $finished_events = BookingRegistraion::where('published_at', '<',Carbon::now()->format('Y-m-d'))->get();
-    $up_comming_events = BookingRegistraion::where('published_at', '>=',Carbon::now()->format('Y-m-d'))->get();
+      // search by date start
+         // if(request()->ajax())
+         // {
+         //  if(!empty($request->from_date))
+         //  {
+         //   $data = DB::table('booking_registraions')
+         //     ->whereBetween('created_at', array($request->from_date, $request->to_date))
+         //     ->get();
+         //  }
+         //  else
+         //  {
+         //   $data = DB::table('booking_registraions')
+         //     ->get();
+         //  }
+         //  return datatables()->of($data)->make(true);
+         // }
+// search by date end
+      return $request->isMethod('post') ? $this->store($request) : $event_data->render('dashboard.event_booked_list');
 
-
-        return view('dashboard.event_booked_list', compact('finished_events','up_comming_events'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //event booked list for pdf end
+
+    function event_comming_and_finished(){
+      $up_comming_events = BookingRegistraion::where('published_at', '>=', Carbon::now()->format('Y-m-d'))->get();
+      $finished_events = BookingRegistraion::where('published_at', '<', Carbon::now()->format('Y-m-d'))->get();
+      return view('dashboard.comming_and_finished_event',compact('up_comming_events','finished_events'));
+    }
+
     public function create()
     {
 
@@ -130,7 +154,7 @@ class EventController extends Controller
         }
         $event->events_title = $request->events_title;
         $event->events_details = $request->events_details;
-        
+
         $event->save();
 
         return redirect('event/show');
